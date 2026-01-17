@@ -111,24 +111,13 @@ h1{
 <script>
 const startTimer = () => {
 
-    const now = new Date();
-
-    // تاريخ امبارح الساعة 11:15 مساءً
-    const start = new Date(
-        now.getFullYear(),
-        now.getMonth(),
-        now.getDate() - 1, // يوم امبارح
-        23, 15, 0
-    );
+    // إعداد وقت البداية: أمس الساعة 11:15 مساءً
+    const start = new Date();
+    start.setDate(start.getDate() - 1); // يوم امبارح
+    start.setHours(23, 15, 0, 0);       // الساعة 11:15 مساءً
 
     const update = () => {
         const diff = new Date() - start;
-
-        if(diff < 0){
-            document.getElementById("timer").innerText =
-                "لسه اللحظة دي مجتش 🤍";
-            return;
-        }
 
         const s = Math.floor(diff/1000) % 60;
         const m = Math.floor(diff/(1000*60)) % 60;
