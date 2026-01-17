@@ -110,13 +110,14 @@ h1{
 
 <script>
 const startTimer = () => {
+
     const now = new Date();
 
-    // تاريخ النهارده الساعة 11:15 مساءً
+    // تاريخ امبارح الساعة 11:15 مساءً
     const start = new Date(
         now.getFullYear(),
         now.getMonth(),
-        now.getDate(),
+        now.getDate() - 1, // يوم امبارح
         23, 15, 0
     );
 
